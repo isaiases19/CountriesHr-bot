@@ -25,6 +25,8 @@ client.on('message', async msg => {
 
     //Espana
     contesta(msg, 'es', 'ar', '🇪🇸', '🇦🇷', 2, -3);
+
+    //Mexico
     contesta(msg, 'mx', 'es', '🇲🇽', '🇪🇸', -5, 2);
 
     //Argentina
@@ -39,6 +41,16 @@ client.on('message', async msg => {
         msg.channel.bulkDelete(msgS);
     }
 
+});
+
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    // Send the message, mentioning the member
+    channel.send(`Bienvenido , ${member}, a AsiProgramo`);
 });
 
 
@@ -79,4 +91,4 @@ function calcTime(city, offset) {
     return city + " " + nd.toLocaleString();
 }
 
-client.login('NzU1MTExMDgwNzExMTU5OTY4.X1-h_g.u4x8C784eF-cqWX8KRYKCAvX3_Y');
+client.login('NzU1MTExMDgwNzExMTU5OTY4.X1-h_g.3az_UHi8EiSuA13ImNlmu-jN_dI');
