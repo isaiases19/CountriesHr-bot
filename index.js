@@ -32,6 +32,9 @@ client.on('message', async msg => {
     //Argentina
     contesta(msg, 'ar', 'mx', '🇲🇽', '🇦🇷', -5, -3);
 
+    contesta(msg, 'pr', 'us', '🇵🇪', '🇺🇸', -5, -4);
+
+
     if (msg.content === 'hola') {
         msg.reply('hola! ' + msg.author.username);
     }
@@ -91,4 +94,4 @@ function calcTime(city, offset) {
     return city + " " + nd.toLocaleString();
 }
 
-client.login('NzU1MTExMDgwNzExMTU5OTY4.X1-h_g.3az_UHi8EiSuA13ImNlmu-jN_dI');
+client.login('token');
